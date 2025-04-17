@@ -53,6 +53,10 @@
       "path": "internal/vite-config",
     },
     {
+      "name": "@vben/mb",
+      "path": "package-mb",
+    },
+    {
       "name": "@vben-core/design",
       "path": "packages/@core/base/design",
     },

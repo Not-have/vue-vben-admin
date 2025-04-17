@@ -9,9 +9,19 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "main": "index.js",
+  "imports": {
+    "#/*": "./src/*"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
   "devDependencies": {
-    "element-plus": "^2.9.7",
-    "typescript": "^5.8.3",
-    "vue": "^3.5.13"
+    "@vben/tsconfig": "workspace:^",
+    "element-plus": "catalog:",
+    "typescript": "catalog:",
+    "vue": "catalog:"
   }
 }
