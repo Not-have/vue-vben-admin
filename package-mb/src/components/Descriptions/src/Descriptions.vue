@@ -11,6 +11,7 @@ import { get } from 'lodash-es';
 import { Icon } from '#/components/Icon';
 import { propTypes } from '#/utils/propTypes';
 
+// TODO : 适配移动端
 const mobile = computed(() => false);
 
 const defaultData = '-';
