@@ -23,5 +23,8 @@
     "element-plus": "catalog:",
     "typescript": "catalog:",
     "vue": "catalog:"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.52.2"
   }
 }
