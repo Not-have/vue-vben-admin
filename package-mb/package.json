@@ -20,10 +20,14 @@
   },
   "dependencies": {
     "@iconify/vue": "^4.3.0",
+    "@vueuse/core": "^13.1.0",
     "@wangeditor/editor": "^5.1.23",
+    "@zxcvbn-ts/core": "^3.0.4",
+    "cropperjs": "^2.0.0",
     "echarts": "^5.6.0",
     "lodash-es": "^4.17.21",
-    "monaco-editor": "catalog:"
+    "monaco-editor": "catalog:",
+    "vue-json-pretty": "^2.4.0"
   },
   "devDependencies": {
     "@vben/tsconfig": "workspace:^",
