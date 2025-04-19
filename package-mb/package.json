@@ -18,14 +18,14 @@
       "default": "./src/index.ts"
     }
   },
+  "dependencies": {
+    "monaco-editor": "catalog:"
+  },
   "devDependencies": {
     "@vben/tsconfig": "workspace:^",
     "element-plus": "catalog:",
     "typescript": "catalog:",
     "vue": "catalog:",
-    "vue-types": "^6.0.0"
-  },
-  "dependencies": {
-    "monaco-editor": "^0.52.2"
+    "vue-types": "catalog:"
   }
 }

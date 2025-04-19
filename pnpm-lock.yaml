@@ -321,6 +321,9 @@ catalogs:
     medium-zoom:
       specifier: ^1.1.0
       version: 1.1.0
+    monaco-editor:
+      specifier: ^0.52.2
+      version: 0.52.2
     naive-ui:
       specifier: ^2.41.0
       version: 2.41.0
@@ -501,6 +504,9 @@ catalogs:
     vue-tsc:
       specifier: 2.1.10
       version: 2.1.10
+    vue-types:
+      specifier: ^6.0.0
+      version: 6.0.0
     vxe-pc-ui:
       specifier: ^4.5.14
       version: 4.5.14
@@ -1215,7 +1221,7 @@ importers:
   package-mb:
     dependencies:
       monaco-editor:
-        specifier: ^0.52.2
+        specifier: 'catalog:'
         version: 0.52.2
     devDependencies:
       '@vben/tsconfig':
@@ -1231,7 +1237,7 @@ importers:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.8.3)
       vue-types:
-        specifier: ^6.0.0
+        specifier: 'catalog:'
         version: 6.0.0(vue@3.5.13(typescript@5.8.3))
 
   packages/@core/base/design: {}
