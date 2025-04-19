@@ -35,6 +35,14 @@ const routes: RouteRecordRaw[] = [
         path: '/migrate-mb/demo02',
         component: () => import('#/views/migrate-mb/demo-02/index.vue'),
       },
+      {
+        meta: {
+          title: 'Demo03',
+        },
+        name: 'Demo03',
+        path: '/migrate-mb/demo03',
+        component: () => import('#/views/migrate-mb/demo-03/index.vue'),
+      },
     ],
   },
 ];

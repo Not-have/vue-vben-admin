@@ -142,14 +142,23 @@ catalogs:
       specifier: ^2.4.6
       version: 2.4.6
     '@vueuse/core':
-      specifier: ^12.8.2
-      version: 12.8.2
+      specifier: ^13.1.0
+      version: 13.1.0
     '@vueuse/integrations':
       specifier: ^12.8.2
       version: 12.8.2
     '@vueuse/motion':
       specifier: ^2.2.6
       version: 2.2.6
+    '@wangeditor/editor':
+      specifier: ^5.1.23
+      version: 5.1.23
+    '@wangeditor/editor-for-vue':
+      specifier: ^5.1.12
+      version: 5.1.12
+    '@zxcvbn-ts/core':
+      specifier: ^3.0.4
+      version: 3.0.4
     ant-design-vue:
       specifier: ^4.2.6
       version: 4.2.6
@@ -186,6 +195,9 @@ catalogs:
     consola:
       specifier: ^3.4.2
       version: 3.4.2
+    cropperjs:
+      specifier: ^2.0.0
+      version: 2.0.0
     cross-env:
       specifier: ^7.0.3
       version: 7.0.3
@@ -303,6 +315,9 @@ catalogs:
     lint-staged:
       specifier: ^15.5.0
       version: 15.5.0
+    lodash-es:
+      specifier: ^4.17.21
+      version: 4.17.21
     lodash.clonedeep:
       specifier: ^4.5.0
       version: 4.5.0
@@ -486,12 +501,18 @@ catalogs:
     vitest:
       specifier: ^2.1.9
       version: 2.1.9
+    vue-draggable-plus:
+      specifier: ^0.6.0
+      version: 0.6.0
     vue-eslint-parser:
       specifier: ^9.4.3
       version: 9.4.3
     vue-i18n:
       specifier: ^11.1.3
       version: 11.1.3
+    vue-json-pretty:
+      specifier: ^2.4.0
+      version: 2.4.0
     vue-json-viewer:
       specifier: ^3.0.4
       version: 3.0.4
@@ -516,6 +537,9 @@ catalogs:
     watermark-js-plus:
       specifier: ^1.5.8
       version: 1.5.8
+    xgplayer:
+      specifier: ^3.0.21
+      version: 3.0.21
     zod:
       specifier: ^3.24.2
       version: 3.24.2
@@ -700,7 +724,7 @@ importers:
         version: link:../../packages/utils
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       ant-design-vue:
         specifier: 'catalog:'
         version: 4.2.6(vue@3.5.13(typescript@5.8.3))
@@ -766,7 +790,7 @@ importers:
         version: link:../../packages/utils
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       dayjs:
         specifier: 'catalog:'
         version: 1.11.13
@@ -833,7 +857,7 @@ importers:
         version: link:../../packages/utils
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       naive-ui:
         specifier: 'catalog:'
         version: 2.41.0(vue@3.5.13(typescript@5.8.3))
@@ -1221,48 +1245,48 @@ importers:
   package-mb:
     dependencies:
       '@iconify/vue':
-        specifier: ^4.3.0
+        specifier: 'catalog:'
         version: 4.3.0(vue@3.5.13(typescript@5.8.3))
       '@vueuse/core':
-        specifier: ^13.1.0
+        specifier: 'catalog:'
         version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       '@wangeditor/editor':
-        specifier: ^5.1.23
+        specifier: 'catalog:'
         version: 5.1.23
+      '@wangeditor/editor-for-vue':
+        specifier: 'catalog:'
+        version: 5.1.12(@wangeditor/editor@5.1.23)(vue@3.5.13(typescript@5.8.3))
       '@zxcvbn-ts/core':
-        specifier: ^3.0.4
+        specifier: 'catalog:'
         version: 3.0.4
       cropperjs:
-        specifier: ^2.0.0
+        specifier: 'catalog:'
         version: 2.0.0
       echarts:
-        specifier: ^5.6.0
+        specifier: 'catalog:'
         version: 5.6.0
       lodash-es:
-        specifier: ^4.17.21
+        specifier: 'catalog:'
         version: 4.17.21
       monaco-editor:
         specifier: 'catalog:'
         version: 0.52.2
       qrcode:
-        specifier: ^1.5.4
+        specifier: 'catalog:'
         version: 1.5.4
       vue-draggable-plus:
-        specifier: ^0.6.0
+        specifier: 'catalog:'
         version: 0.6.0(@types/sortablejs@1.15.8)
       vue-json-pretty:
-        specifier: ^2.4.0
+        specifier: 'catalog:'
         version: 2.4.0(vue@3.5.13(typescript@5.8.3))
       xgplayer:
-        specifier: ^3.0.21
+        specifier: 'catalog:'
         version: 3.0.21(core-js@3.41.0)
     devDependencies:
       '@vben/tsconfig':
         specifier: workspace:^
         version: link:../internal/tsconfig
-      '@wangeditor/editor-for-vue':
-        specifier: ^1.0.2
-        version: 1.0.2(@wangeditor/editor@5.1.23)(vue@3.5.13(typescript@5.8.3))
       element-plus:
         specifier: 'catalog:'
         version: 2.9.7(vue@3.5.13(typescript@5.8.3))
@@ -1367,7 +1391,7 @@ importers:
         version: link:../base/shared
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       radix-vue:
         specifier: 'catalog:'
         version: 1.9.17(vue@3.5.13(typescript@5.8.3))
@@ -1392,7 +1416,7 @@ importers:
         version: link:../base/typings
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.8.3)
@@ -1416,7 +1440,7 @@ importers:
         version: 4.15.0(vue@3.5.13(typescript@5.8.3))(zod@3.24.2)
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       vee-validate:
         specifier: 'catalog:'
         version: 4.15.0(vue@3.5.13(typescript@5.8.3))
@@ -1449,7 +1473,7 @@ importers:
         version: link:../../base/typings
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.8.3)
@@ -1473,7 +1497,7 @@ importers:
         version: link:../../base/typings
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.8.3)
@@ -1497,7 +1521,7 @@ importers:
         version: link:../../base/typings
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.8.3)
@@ -1518,7 +1542,7 @@ importers:
         version: link:../../base/typings
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       class-variance-authority:
         specifier: 'catalog:'
         version: 0.7.1
@@ -1551,7 +1575,7 @@ importers:
         version: link:../../base/typings
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.8.3)
@@ -1614,7 +1638,7 @@ importers:
         version: link:../../types
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       '@vueuse/integrations':
         specifier: 'catalog:'
         version: 12.8.2(async-validator@4.2.5)(axios@1.8.4)(change-case@5.4.4)(focus-trap@7.6.4)(nprogress@0.2.0)(qrcode@1.5.4)(sortablejs@1.15.6)(typescript@5.8.3)
@@ -1660,7 +1684,7 @@ importers:
         version: link:../../utils
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.8.3)
@@ -1723,7 +1747,7 @@ importers:
         version: link:../../utils
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.8.3)
@@ -1762,7 +1786,7 @@ importers:
         version: link:../../utils
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       '@vueuse/motion':
         specifier: 'catalog:'
         version: 2.2.6(magicast@0.3.5)(vue@3.5.13(typescript@5.8.3))
@@ -1937,7 +1961,7 @@ importers:
         version: link:../packages/utils
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 12.8.2(typescript@5.8.3)
+        version: 13.1.0(vue@3.5.13(typescript@5.8.3))
       ant-design-vue:
         specifier: 'catalog:'
         version: 4.2.6(vue@3.5.13(typescript@5.8.3))
@@ -4936,8 +4960,8 @@ packages:
       slate: ^0.72.0
       snabbdom: ^3.1.0
 
-  '@wangeditor/editor-for-vue@1.0.2':
-    resolution: {integrity: sha512-BOENvAXJVtVXlE2X50AAvjV82YlCUeu5cbeR0cvEQHQjYtiVnJtq7HSoj85r2kTgGouI5OrpJG9BBEjSjUSPyA==}
+  '@wangeditor/editor-for-vue@5.1.12':
+    resolution: {integrity: sha512-0Ds3D8I+xnpNWezAeO7HmPRgTfUxHLMd9JKcIw+QzvSmhC5xUHbpCcLU+KLmeBKTR/zffnS5GQo6qi3GhTMJWQ==}
     peerDependencies:
       '@wangeditor/editor': '>=5.1.0'
       vue: ^3.5.13
@@ -14275,7 +14299,7 @@ snapshots:
       slate-history: 0.66.0(slate@0.72.8)
       snabbdom: 3.6.2
 
-  '@wangeditor/editor-for-vue@1.0.2(@wangeditor/editor@5.1.23)(vue@3.5.13(typescript@5.8.3))':
+  '@wangeditor/editor-for-vue@5.1.12(@wangeditor/editor@5.1.23)(vue@3.5.13(typescript@5.8.3))':
     dependencies:
       '@wangeditor/editor': 5.1.23
       vue: 3.5.13(typescript@5.8.3)
