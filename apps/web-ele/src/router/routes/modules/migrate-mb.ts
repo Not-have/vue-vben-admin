@@ -6,7 +6,7 @@ const routes: RouteRecordRaw[] = [
       icon: 'ic:baseline-view-in-ar',
       keepAlive: true,
       order: 1000,
-      title: '迁',
+      title: '迁移',
     },
     name: 'migrate-mb',
     path: '/migrate-mb',
@@ -18,6 +18,14 @@ const routes: RouteRecordRaw[] = [
         name: '"Ui"',
         path: '/migrate-mb/ui',
         component: () => import('#/views/migrate-mb/ui/index.vue'),
+      },
+      {
+        meta: {
+          title: 'Demo01',
+        },
+        name: 'Demo01',
+        path: '/migrate-mb/demo01',
+        component: () => import('#/views/migrate-mb/demo-01/index.vue'),
       },
     ],
   },

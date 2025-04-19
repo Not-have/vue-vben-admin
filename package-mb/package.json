@@ -24,6 +24,10 @@
     "./utils/*": {
       "types": "./src/utils/*/*.ts",
       "default": "./src/utils/*/*.ts"
+    },
+    "./types": {
+      "types": "./src/types/index.ts",
+      "default": "./src/types/index.ts"
     }
   },
   "dependencies": {
