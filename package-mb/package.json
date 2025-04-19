@@ -26,7 +26,7 @@
     "element-plus": "catalog:",
     "typescript": "catalog:",
     "vue": "catalog:",
-    "vue-router": "^4.5.0",
+    "vue-router": "catalog:",
     "vue-types": "catalog:"
   }
 }
