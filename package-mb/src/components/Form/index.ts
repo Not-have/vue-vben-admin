@@ -1,5 +1,7 @@
 import type { FormSchema, FormSetProps } from './src/types';
 
+import type { Recordable } from '#/types';
+
 export { default as Form } from './src/Form.vue';
 
 export interface FormExpose {
