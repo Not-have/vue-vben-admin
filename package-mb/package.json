@@ -17,13 +17,13 @@
       "types": "./src/components/*/index.ts",
       "default": "./src/components/*/index.ts"
     },
-    "./hooks": {
-      "types": "./src/hooks/index.ts",
-      "default": "./src/hooks/index.ts"
+    "./hooks/*": {
+      "types": "./src/hooks/*.ts",
+      "default": "./src/hooks/*.ts"
     },
     "./utils/*": {
-      "types": "./src/utils/*/*.ts",
-      "default": "./src/utils/*/*.ts"
+      "types": "./src/utils/*.ts",
+      "default": "./src/utils/*.ts"
     },
     "./types": {
       "types": "./src/types/index.ts",

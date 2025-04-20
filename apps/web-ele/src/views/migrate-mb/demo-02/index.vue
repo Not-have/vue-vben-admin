@@ -10,7 +10,7 @@ import { onMounted, reactive, ref, unref } from 'vue';
 import { BaseButton } from '@vben/mb/components/Button';
 import { ContentWrap } from '@vben/mb/components/ContentWrap';
 import { Table } from '@vben/mb/components/Table';
-import { useTable } from '@vben/mb/hooks';
+import { useTable } from '@vben/mb/hooks/web/useTable';
 
 import { ElTag } from 'element-plus';
 
