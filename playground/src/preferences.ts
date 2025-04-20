@@ -8,7 +8,6 @@ import { defineOverridesPreferences } from '@vben/preferences';
 export const overridesPreferences = defineOverridesPreferences({
   // overrides
   app: {
-    enableRefreshToken: true,
     name: import.meta.env.VITE_APP_TITLE,
   },
 });
