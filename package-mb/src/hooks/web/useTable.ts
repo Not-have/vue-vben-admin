@@ -164,7 +164,7 @@ export const useTable = (config: UseTableConfig) => {
       loading.value = true;
       try {
         const res = await config?.fetchDataApi();
-        console.error('fetchDataApi res', res);
+        // console.log('fetchDataApi res', res);
         if (res) {
           dataList.value = res.list;
           total.value = res.total || 0;

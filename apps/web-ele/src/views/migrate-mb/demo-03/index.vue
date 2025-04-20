@@ -1768,10 +1768,7 @@ const schema = reactive<FormSchema[]>([
 </script>
 
 <template>
-  <ContentWrap
-    title="全部示例"
-    message="基于 ElementPlus 的 Form 组件二次封装，实现数据驱动，支持所有 Form 参数"
-  >
+  <ContentWrap title="全部示例">
     <Form :schema="schema" label-width="auto" label-position="right" />
   </ContentWrap>
 </template>

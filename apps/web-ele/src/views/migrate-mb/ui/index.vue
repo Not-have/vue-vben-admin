@@ -2,6 +2,20 @@
 import { Page } from '@vben/common-ui';
 import { BaseButton } from '@vben/mb/components/Button';
 import { Qrcode } from '@vben/mb/components/Qrcode';
+
+import { getExampleTableApi } from '#/api/core/table';
+
+getExampleTableApi({
+  page: 1,
+  pageSize: 10,
+})
+  .then((res) => {
+    // eslint-disable-next-line no-console
+    console.log(res);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 </script>
 
 <template>

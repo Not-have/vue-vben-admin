@@ -3,7 +3,6 @@
 <!-- eslint-disable no-console -->
 <script setup lang="tsx">
 import type { TableColumn, TableSlotDefault } from '@vben/mb/components/Table';
-import type { Recordable } from '@vben/mb/types';
 
 import { onMounted, reactive, ref, unref } from 'vue';
 
@@ -12,19 +11,24 @@ import { ContentWrap } from '@vben/mb/components/ContentWrap';
 import { Table } from '@vben/mb/components/Table';
 import { useTable } from '@vben/mb/hooks/web/useTable';
 
-import { ElTag } from 'element-plus';
-
-import dataFetch from '../mock/mock-01.json';
+import { getExampleTableApi } from '#/api/core/table';
 
 const { tableRegister, tableMethods, tableState } = useTable({
   fetchDataApi: async () => {
-    const res = await dataFetch;
+    const { currentPage, pageSize } = tableState;
+
+    const res = await getExampleTableApi({
+      page: unref(currentPage),
+      pageSize: unref(pageSize),
+    });
+
     return {
-      list: res.data.list,
-      total: res.data.total,
+      list: res.items,
+      total: res.total,
     };
   },
 });
+
 const { loading, dataList, total, currentPage, pageSize } = tableState;
 const { setProps, setColumn, getElTableExpose, addColumn, delColumn, refresh } =
   tableMethods;
@@ -36,64 +40,8 @@ onMounted(() => {
     setProps({
       columns: [
         {
-          field: 'expand',
-          type: 'expand',
-          slots: {
-            default: (data: TableSlotDefault) => {
-              const { row } = data;
-              return (
-                <div class="ml-30px">
-                  <div>标题：{row.title}</div>
-                  <div>作者：{row.author}</div>
-                  <div>创建时间：{row.display_time}</div>
-                </div>
-              );
-            },
-          },
-        },
-        {
-          field: 'selection',
-          type: 'selection',
-        },
-        {
-          field: 'index',
-          label: '序号',
-          type: 'index',
-        },
-        {
-          field: 'title',
-          label: '标题',
-        },
-        {
-          field: 'author',
-          label: '作者',
-        },
-        {
-          field: 'display_time',
-          label: '创建时间',
-        },
-        {
-          field: 'importance',
-          label: '重要性',
-          formatter: (_: Recordable, __: TableColumn, cellValue: number) => {
-            return (
-              <ElTag
-                type={
-                  cellValue === 1
-                    ? 'success'
-                    : cellValue === 2
-                      ? 'warning'
-                      : 'danger'
-                }
-              >
-                {cellValue === 1 ? '重要' : cellValue === 2 ? '良好' : '一般'}
-              </ElTag>
-            );
-          },
-        },
-        {
-          field: 'pageviews',
-          label: '阅读数',
+          field: 'description',
+          label: '描述',
         },
         {
           field: 'action',
