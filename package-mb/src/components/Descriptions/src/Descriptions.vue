@@ -5,14 +5,15 @@ import type { DescriptionsSchema } from './types';
 
 import { computed, defineComponent, ref, unref } from 'vue';
 
+import { usePreferences } from '@vben/preferences';
+
 import { ElCol, ElCollapseTransition, ElRow, ElTooltip } from 'element-plus';
 import { get } from 'lodash-es';
 
 import { Icon } from '#/components/Icon';
 import { propTypes } from '#/utils/propTypes';
 
-// TODO : 适配移动端
-const mobile = computed(() => false);
+const mobile = computed(() => usePreferences().isMobile);
 
 const defaultData = '-';
 

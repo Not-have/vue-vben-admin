@@ -13,6 +13,8 @@ import {
   watch,
 } from 'vue';
 
+import { usePreferences } from '@vben/preferences';
+
 import { debounce } from 'lodash-es';
 
 import echarts from '#/plugins/echarts';
@@ -30,8 +32,7 @@ const props = defineProps({
   width: propTypes.oneOfType([Number, String]).def('100%'),
 });
 
-// TODO: 主题切换
-const isDark = computed(() => false);
+const { isDark } = usePreferences();
 
 const theme = computed(() => {
   const echartTheme: boolean | string = unref(isDark) ? true : 'auto';

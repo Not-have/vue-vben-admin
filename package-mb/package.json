@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@iconify/vue": "catalog:",
+    "@vben/preferences": "workspace:^",
     "@vueuse/core": "catalog:",
     "@wangeditor/editor": "catalog:",
     "@wangeditor/editor-for-vue": "catalog:",
