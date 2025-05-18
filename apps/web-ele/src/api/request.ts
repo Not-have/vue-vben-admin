@@ -53,6 +53,8 @@ function createRequestClient(baseURL: string, options?: RequestClientOptions) {
     const resp = await refreshTokenApi();
     const newToken = resp.data;
     accessStore.setAccessToken(newToken);
+    console.error('Refresh token success, new token:', newToken);
+
     return newToken;
   }
 

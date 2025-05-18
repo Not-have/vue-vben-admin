@@ -222,8 +222,6 @@
     "eslint.config.mjs": ".eslintignore,.prettierignore,.stylelintignore,.commitlintrc.*,.prettierrc.*,stylelint.config.*,.lintstagedrc.mjs,cspell.json,lefthook.yml",
     "tailwind.config.mjs": "postcss.*"
   },
-  "commentTranslate.hover.enabled": false,
-  "commentTranslate.multiLineMerge": true,
   "vue.server.hybridMode": true,
   "typescript.tsdk": "node_modules/typescript/lib",
   "oxc.enable": false,
