@@ -146,11 +146,11 @@ const innerWidth = Math.min(
 );
 
 // 框架元素
-const topBorder = `\n${red}╔${repeat('═', innerWidth + 2)}╗${reset}`;
-const bottomBorder = `${red}╚${repeat('═', innerWidth + 2)}╝${reset}\n`;
-const emptyLine = `${red}║${reset} ${repeat(' ', innerWidth)} ${red}║${reset}`;
+const topBorder = `\n${red}${repeat('═', innerWidth + 2)}${reset}`;
+const bottomBorder = `${red}${repeat('═', innerWidth + 2)}${reset}\n`;
+const emptyLine = `${red}${reset} ${repeat(' ', innerWidth)} ${red}${reset}`;
 const title = `${bgRed}${white}${bold}  ⚠️ 弃用通知  ${reset}`;
-const titleLine = `${red}║${reset} ${pad(title, innerWidth)} ${red}║${reset}`;
+const titleLine = `${red}${reset} ${pad(title, innerWidth)} ${red}${reset}`;
 
 // 内容
 const wrappedBodyLines = contentLines.flatMap((line) => {
@@ -161,7 +161,7 @@ const wrappedBodyLines = contentLines.flatMap((line) => {
 });
 
 const body = wrappedBodyLines
-  .map((line) => `${red}║${reset} ${pad(line, innerWidth)} ${red}║${reset}`)
+  .map((line) => `${red}${reset} ${pad(line, innerWidth)} ${red}${reset}`)
   .join('\n');
 
 // 拼接 Banner
