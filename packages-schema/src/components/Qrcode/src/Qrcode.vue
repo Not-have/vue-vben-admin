@@ -258,3 +258,13 @@ const disabledClick = () => {
     </div>
   </div>
 </template>
+
+<style scoped>
+.qrcode--disabled {
+  background: rgb(255 255 255 / 95%);
+}
+
+.qrcode--disabled > div {
+  transform: translate(-50%, -50%);
+}
+</style>

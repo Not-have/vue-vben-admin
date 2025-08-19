@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
+    "@types/qrcode": "catalog:",
     "@vben/tsconfig": "workspace:^",
     "element-plus": "catalog:",
     "typescript": "catalog:",

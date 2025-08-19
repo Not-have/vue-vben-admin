@@ -242,7 +242,7 @@ export default defineComponent({
         .map((item) => {
           // 如果是 Divider 组件，需要自己占用一行
           const isDivider = item.component === 'Divider';
-          const Com = componentMap.Divider as ReturnType<
+          const Com = componentMap?.Divider as ReturnType<
             typeof defineComponent
           >;
           return isDivider ? (
