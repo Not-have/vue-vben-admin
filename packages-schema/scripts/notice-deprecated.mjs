@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 /* eslint-disable unicorn/number-literal-case */
 import { readFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
 import process from 'node:process';
+import { fileURLToPath } from 'node:url';
 
 // =============================
 // 读取 package.json
@@ -10,6 +12,10 @@ const pkgJson = JSON.parse(
   readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
 );
 const pkgName = pkgJson?.name || '此包';
+
+// 解析 README.md 路径
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const readmePath = resolve(__dirname, '../README.md');
 
 // 仓库与主页
 let repoUrl = '';
@@ -39,6 +45,7 @@ const bgRed = '\u001B[41m';
 const contentLines = [
   `${pkgName} 已标记为废弃，后续不再维护与更新。`,
   '请尽快迁移至替代方案：详见本包 README.md 或仓库迁移指南。',
+  `README 文件： ${readmePath}`,
   repoUrl && `仓库： ${repoUrl}`,
   homepageUrl && `主页： ${homepageUrl}`,
 ].filter(Boolean);
