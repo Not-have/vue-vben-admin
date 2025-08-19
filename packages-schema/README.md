@@ -1,6 +1,6 @@
 # mb-admin
 
-## 迁移
+## 迁移 1.5.0
 
 [vue-element-plus-admin](https://element-plus-admin-doc.cn/)
 
