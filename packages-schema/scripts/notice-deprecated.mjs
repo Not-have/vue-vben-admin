@@ -14,9 +14,9 @@ const bold = '\u001B[1m';
 
 const lines = [
   '',
-  `${bold}${red}⚠ 弃用通知${reset}`,
+  `${bold}${red}⚠️ 弃用通知${reset}`,
   `${yellow}${pkgName}${reset} 已标记为废弃，后续不再维护与更新。`,
-  '请迁移至替代方案（详见本包 README），或在仓库中查看迁移指南。',
+  '请迁移至替代方案（详见本包 README.md），或在仓库中查看迁移指南。',
   '',
 ];
 

@@ -1,9 +1,11 @@
 # mb-admin
 
-## 迁移 1.5.0
+## 迁移基线
 
-[vue-element-plus-admin](https://element-plus-admin-doc.cn/)
+- 源项目：[vue-element-plus-admin](https://github.com/kailong321200875/vue-element-plus-admin)（基线版本：2.9.0）
+- 本项目：[mb-admin](https://github.com/syh-micro-build/mb-admin)（基线版本：1.5.0）
 
-[mb-admin](https://github.com/syh-micro-build/mb-admin)
+## 使用建议
 
-## 推荐使用，本项目自带的方式，进行开发，上面 Schema 方式维护度小。
+- 优先采用本项目内置的开发方案。
+- 旧版 Schema 方案维护成本高，已弃用，不再提供支持与推荐。
