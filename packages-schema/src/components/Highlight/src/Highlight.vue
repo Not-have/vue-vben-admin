@@ -6,8 +6,8 @@ import { computed, defineComponent, h, unref } from 'vue';
 import { propTypes } from '#/utils/propTypes';
 
 export default defineComponent({
-  emits: ['click'],
   name: 'Highlight',
+  emits: ['click'],
   props: {
     color: propTypes.string.def('var(--el-color-primary)'),
     keys: {

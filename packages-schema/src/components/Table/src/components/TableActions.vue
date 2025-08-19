@@ -14,17 +14,17 @@ import { Icon } from '#/components/Icon';
 import ColumnSetting from './ColumnSetting.vue';
 
 export default defineComponent({
+  name: 'TableActions',
   components: {
     ColumnSetting,
   },
-  emits: ['refresh', 'changSize', 'confirm'],
-  name: 'TableActions',
   props: {
     columns: {
       default: () => [],
       type: Array as PropType<TableColumn[]>,
     },
   },
+  emits: ['refresh', 'changSize', 'confirm'],
   setup(props, { emit }) {
     // TODO : 这里的sizeMap需要根据实际情况来设置
     const sizeMap = computed(() => ['default', 'large', 'small']);

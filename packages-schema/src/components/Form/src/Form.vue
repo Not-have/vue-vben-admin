@@ -49,8 +49,8 @@ const { renderRadioOptions } = useRenderRadio();
 const { renderCheckboxOptions } = useRenderCheckbox();
 
 export default defineComponent({
-  emits: ['register'],
   name: 'Form',
+  emits: ['register'],
   props: {
     // 是否自动设置placeholder
     autoSetPlaceholder: propTypes.bool.def(true),
