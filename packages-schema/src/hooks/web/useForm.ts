@@ -1,0 +1,165 @@
+import type { ElForm, ElFormItem } from 'element-plus';
+
+import type {
+  Form,
+  FormExpose,
+  FormProps,
+  FormSchema,
+  FormSetProps,
+} from '#/components/Form';
+import type { ComponentRef, Recordable } from '#/types';
+
+import { nextTick, ref, unref } from 'vue';
+
+import { isEmptyVal, isObject } from '#/utils/is';
+
+export const useForm = () => {
+  // From实例
+  const formRef = ref<FormExpose & typeof Form>();
+
+  // ElForm实例
+  const elFormRef = ref<ComponentRef<typeof ElForm>>();
+
+  /**
+   * @param ref Form实例
+   * @param elRef ElForm实例
+   */
+  const register = (
+    ref: FormExpose & typeof Form,
+    elRef: ComponentRef<typeof ElForm>,
+  ) => {
+    formRef.value = ref;
+    elFormRef.value = elRef;
+  };
+
+  const getForm = async () => {
+    await nextTick();
+    const form = unref(formRef);
+    if (!form) {
+      console.error(
+        'The form is not registered. Please use the register method to register',
+      );
+    }
+    return form;
+  };
+
+  // 一些内置的方法
+  const methods = {
+    /**
+     * @description 新增schema
+     * @param formSchema 需要新增数据
+     * @param index 在哪里新增
+     */
+    addSchema: async (formSchema: FormSchema, index?: number) => {
+      const form = await getForm();
+      form?.addSchema(formSchema, index);
+    },
+
+    /**
+     * @description 删除schema
+     * @param field 删除哪个数据
+     */
+    delSchema: async (field: string) => {
+      const form = await getForm();
+      form?.delSchema(field);
+    },
+
+    /**
+     * @description 获取表单组件的实例
+     * @param field 表单项唯一标识
+     * @returns component instance
+     */
+    getComponentExpose: async (field: string) => {
+      const form = await getForm();
+      return form?.getComponentExpose(field);
+    },
+
+    /**
+     * @description 获取ElForm组件的实例
+     * @returns ElForm instance
+     */
+    getElFormExpose: async () => {
+      await getForm();
+      return unref(elFormRef);
+    },
+
+    /**
+     * @description 获取表单数据
+     * @returns form data
+     */
+    getFormData: async <T = Recordable>(filterEmptyVal = true): Promise<T> => {
+      const form = await getForm();
+      const model = form?.formModel as any;
+      // eslint-disable-next-line unicorn/prefer-ternary
+      if (filterEmptyVal) {
+        // 使用reduce过滤空值，并返回一个新对象
+        // eslint-disable-next-line unicorn/no-array-reduce
+        return Object.keys(model).reduce((prev: Recordable, next) => {
+          const value = model[next];
+          if (!isEmptyVal(value)) {
+            if (isObject(value)) {
+              if (Object.keys(value).length > 0) {
+                prev[next] = value;
+              }
+            } else {
+              prev[next] = value;
+            }
+          }
+          return prev;
+        }, {}) as T;
+      } else {
+        return model as T;
+      }
+    },
+
+    getFormExpose: async () => {
+      await getForm();
+      return unref(formRef);
+    },
+
+    /**
+     * @description 获取formItem组件的实例
+     * @param field 表单项唯一标识
+     * @returns formItem instance
+     */
+    getFormItemExpose: async (field: string) => {
+      const form = await getForm();
+      return form?.getFormItemExpose(field) as ComponentRef<typeof ElFormItem>;
+    },
+
+    /**
+     * @description 设置form组件的props
+     * @param props form组件的props
+     */
+    setProps: async (props: FormProps = {}) => {
+      const form = await getForm();
+      form?.setProps(props);
+      if (props.model) {
+        form?.setValues(props.model);
+      }
+    },
+
+    /**
+     * @description 设置schema
+     * @param schemaProps 需要设置的schemaProps
+     */
+    setSchema: async (schemaProps: FormSetProps[]) => {
+      const form = await getForm();
+      form?.setSchema(schemaProps);
+    },
+
+    /**
+     * @description 设置form的值
+     * @param data 需要设置的数据
+     */
+    setValues: async (data: Recordable) => {
+      const form = await getForm();
+      form?.setValues(data);
+    },
+  };
+
+  return {
+    formMethods: methods,
+    formRegister: register,
+  };
+};

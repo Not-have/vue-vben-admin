@@ -1,0 +1,83 @@
+<script lang="tsx" setup>
+import {
+  computed,
+  getCurrentInstance,
+  onMounted,
+  unref,
+  useAttrs,
+  useSlots,
+} from 'vue';
+
+import { useResize } from '#/hooks/web/useResize';
+import { propTypes } from '#/utils/propTypes';
+
+import Dialog from './Dialog.vue';
+
+const props = defineProps({
+  fullscreen: propTypes.bool.def(true),
+  initHeight: propTypes.number.def(200),
+  initWidth: propTypes.number.def(window.innerWidth / 2),
+  minResizeHeight: propTypes.number.def(200),
+  minResizeWidth: propTypes.number.def(window.innerWidth / 2),
+  modelValue: propTypes.bool.def(false),
+  title: propTypes.string.def('Dialog'),
+});
+const { maxHeight, minWidth, setupDrag } = useResize({
+  initHeight: props.initHeight,
+  initWidth: props.initWidth,
+  minHeightPx: props.minResizeHeight,
+  minWidthPx: props.minResizeWidth,
+});
+
+const vResize = {
+  mounted(el: HTMLElement) {
+    const observer = new MutationObserver(() => {
+      const elDialog = el.querySelector('.el-dialog');
+
+      if (elDialog) {
+        // 在确认 `elDialog` 已渲染后进行处理
+        setupDrag(elDialog, el);
+        // observer.disconnect() // 一旦获取到元素，停止观察
+      }
+    });
+    // 开始观察子节点的变化
+    observer.observe(el, { childList: true, subtree: true });
+  },
+};
+
+const attrs = useAttrs();
+const slots = useSlots();
+const getBindValue = computed(() => {
+  // eslint-disable-next-line unicorn/prefer-set-has
+  const delArr: string[] = ['maxHeight', 'width'];
+  const obj = Object.assign({}, { ...unref(attrs), ...props });
+  for (const key in obj) {
+    if (delArr.includes(key)) {
+      delete obj[key as keyof typeof obj];
+    }
+  }
+  return obj;
+});
+const instance = getCurrentInstance();
+const initDirective = () => {
+  const directives = instance?.appContext?.app._context?.directives;
+
+  // 检查指令是否已经注册
+  if (!directives || !directives.resize) {
+    instance?.appContext?.app.directive('resize', vResize);
+  }
+};
+onMounted(() => {
+  initDirective();
+});
+</script>
+<template>
+  <div v-resize>
+    <Dialog v-bind="getBindValue" :max-height="maxHeight" :width="minWidth">
+      <slot></slot>
+      <template v-if="slots.footer" #footer>
+        <slot name="footer"></slot>
+      </template>
+    </Dialog>
+  </div>
+</template>
