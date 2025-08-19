@@ -141,8 +141,8 @@ const maxContent = Math.max(
 // === 关键修改：支持配置内容宽度 ===
 const extraWidth = 10; // 可调节：在内容宽度上额外增加 padding
 const innerWidth = Math.min(
-  Math.max(maxContent + extraWidth, 40),
-  Math.max(40, termWidth - 4),
+  Math.max(maxContent + extraWidth, 100),
+  Math.max(100, termWidth - 4),
 );
 
 // 框架元素
@@ -153,9 +153,12 @@ const title = `${bgRed}${white}${bold}  ⚠️ 弃用通知  ${reset}`;
 const titleLine = `${red}║${reset} ${pad(title, innerWidth)} ${red}║${reset}`;
 
 // 内容
-const wrappedBodyLines = contentLines
-  .flatMap((l) => wrapTextToWidth(l, innerWidth - 2))
-  .map((seg) => `${yellow}•${reset} ${seg}`);
+const wrappedBodyLines = contentLines.flatMap((line) => {
+  const segments = wrapTextToWidth(line, innerWidth - 4);
+  return segments.map(
+    (seg, idx) => (idx === 0 ? `${yellow}•${reset} ${seg}` : `  ${seg}`), // 只有第一行加 •
+  );
+});
 
 const body = wrappedBodyLines
   .map((line) => `${red}║${reset} ${pad(line, innerWidth)} ${red}║${reset}`)
