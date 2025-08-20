@@ -293,3 +293,8 @@ const onFormValidate = (
     </div>
   </template>
 </template>
+<style scoped>
+:deep(.el-select__wrapper) {
+  min-width: 178px;
+}
+</style>
