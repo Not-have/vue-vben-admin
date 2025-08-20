@@ -10,8 +10,8 @@ import { h, reactive, ref } from 'vue';
 import { ElTag } from 'element-plus';
 import { BaseButton } from 'mb-admin/components/Button';
 import { ContentWrap } from 'mb-admin/components/ContentWrap';
-import { Dialog } from "mb-admin/components/Dialog";
-import { Form } from "mb-admin/components/Form";
+import { Dialog } from 'mb-admin/components/Dialog';
+import { Form } from 'mb-admin/components/Form';
 import { Table } from 'mb-admin/components/Table';
 import { useForm } from 'mb-admin/hooks/web/useForm';
 import { useValidator } from 'mb-admin/hooks/web/useValidator';
@@ -98,15 +98,15 @@ getTableList();
 
 const actionFn = (data: any) => {
   console.log(data);
-  dialogVisible.value = true
+  dialogVisible.value = true;
 };
 
-const dialogVisible = ref(false)
+const dialogVisible = ref(false);
 
-const { required } = useValidator()
+const { required } = useValidator();
 
-const { formRegister, formMethods } = useForm()
-const { getElFormExpose } = formMethods
+const { formRegister, formMethods } = useForm();
+const { getElFormExpose } = formMethods;
 
 const schema = reactive<FormSchema[]>([
   {
@@ -114,16 +114,16 @@ const schema = reactive<FormSchema[]>([
     label: '输入框',
     component: 'Input',
     formItemProps: {
-      rules: [required()]
-    }
+      rules: [required()],
+    },
   },
   {
     field: 'field2',
     label: '选择器',
     component: 'Select',
     optionApi: async () => {
-      return []
-    }
+      return [];
+    },
   },
   {
     field: 'field3',
@@ -133,14 +133,14 @@ const schema = reactive<FormSchema[]>([
       options: [
         {
           label: 'option-1',
-          value: '1'
+          value: '1',
         },
         {
           label: 'option-2',
-          value: '2'
-        }
-      ]
-    }
+          value: '2',
+        },
+      ],
+    },
   },
   {
     field: 'field4',
@@ -151,41 +151,40 @@ const schema = reactive<FormSchema[]>([
       options: [
         {
           label: 'option-1',
-          value: '1'
+          value: '1',
         },
         {
           label: 'option-2',
-          value: '2'
-        }
-      ]
-    }
+          value: '2',
+        },
+      ],
+    },
   },
   {
     field: 'field5',
     component: 'DatePicker',
     label: '日期选择器',
     componentProps: {
-      type: 'date'
-    }
+      type: 'date',
+    },
   },
   {
     field: 'field6',
     component: 'TimeSelect',
-    label: '时间选择'
-  }
-])
+    label: '时间选择',
+  },
+]);
 
 const formSubmit = async () => {
-  const elFormExpose = await getElFormExpose()
+  const elFormExpose = await getElFormExpose();
   elFormExpose?.validate((valid: any) => {
     if (valid) {
-      console.log('submit success')
+      console.log('submit success');
     } else {
-      console.log('submit fail')
+      console.log('submit fail');
     }
-  })
-}
-
+  });
+};
 </script>
 
 <template>
