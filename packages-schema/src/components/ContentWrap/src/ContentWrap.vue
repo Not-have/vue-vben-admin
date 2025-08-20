@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ElCard, ElTooltip } from 'element-plus';
 
+import { Icon } from '#/components/Icon';
 import { propTypes } from '#/utils/propTypes';
 
 defineProps({
