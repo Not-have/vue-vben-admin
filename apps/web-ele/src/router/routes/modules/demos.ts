@@ -35,7 +35,24 @@ const routes: RouteRecordRaw[] = [
         },
         name: 'Schema',
         path: '/demos/schema',
-        component: () => import('#/views/demos/schema/index.vue'),
+        children: [
+          {
+            meta: {
+              title: 'form',
+            },
+            name: 'SchemaForm',
+            path: '/demos/schema/form',
+            component: () => import('#/views/demos/schema/form.vue'),
+          },
+          {
+            meta: {
+              title: 'table',
+            },
+            name: 'SchemaTable',
+            path: '/demos/schema/table',
+            component: () => import('#/views/demos/schema/table.vue'),
+          },
+        ],
       },
     ],
   },
