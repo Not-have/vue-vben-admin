@@ -7,6 +7,8 @@ import type { Recordable } from 'mb-admin/types';
 
 import { h, reactive, ref } from 'vue';
 
+import { Page } from '@vben/common-ui';
+
 import { ElTag } from 'element-plus';
 import { BaseButton } from 'mb-admin/components/Button';
 import { ContentWrap } from 'mb-admin/components/ContentWrap';
@@ -188,20 +190,22 @@ const formSubmit = async () => {
 </script>
 
 <template>
-  <ContentWrap title="表格" message="基于 ElementPlus 的 Table 组件二次封装">
-    <Table
-      :columns="columns"
-      :data="tableDataList"
-      :loading="loading"
-      :default-sort="{ prop: 'display_time', order: 'descending' }"
-    />
-  </ContentWrap>
+  <Page>
+    <ContentWrap title="表格" message="基于 ElementPlus 的 Table 组件二次封装">
+      <Table
+        :columns="columns"
+        :data="tableDataList"
+        :loading="loading"
+        :default-sort="{ prop: 'display_time', order: 'descending' }"
+      />
+    </ContentWrap>
 
-  <Dialog v-model="dialogVisible" title="弹窗">
-    <Form :schema="schema" @register="formRegister" />
-    <template #footer>
-      <BaseButton type="primary" @click="formSubmit">提交</BaseButton>
-      <BaseButton @click="dialogVisible = false">关闭</BaseButton>
-    </template>
-  </Dialog>
+    <Dialog v-model="dialogVisible" title="弹窗">
+      <Form :schema="schema" @register="formRegister" />
+      <template #footer>
+        <BaseButton type="primary" @click="formSubmit">提交</BaseButton>
+        <BaseButton @click="dialogVisible = false">关闭</BaseButton>
+      </template>
+    </Dialog>
+  </Page>
 </template>

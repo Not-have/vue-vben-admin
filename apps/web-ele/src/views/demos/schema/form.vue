@@ -439,7 +439,7 @@ const getData = async () => {
 </script>
 
 <template>
-  <Page description="抽离了 mb-admin" title="Schema">
+  <Page description="抽离了 mb-admin" title="">
     <ContentWrap title="UseForm 操作" style="margin-bottom: 20px">
       <BaseButton @click="changeLabelWidth(150)">更改 labelWidth</BaseButton>
       <BaseButton @click="changeLabelWidth('auto')">还原 labelWidth</BaseButton>

@@ -52,6 +52,14 @@ const routes: RouteRecordRaw[] = [
             path: '/demos/schema/table',
             component: () => import('#/views/demos/schema/table.vue'),
           },
+          {
+            meta: {
+              title: 'search',
+            },
+            name: 'SchemaSearch',
+            path: '/demos/schema/search',
+            component: () => import('#/views/demos/schema/search.vue'),
+          },
         ],
       },
     ],
