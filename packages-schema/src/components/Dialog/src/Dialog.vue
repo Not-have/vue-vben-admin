@@ -6,6 +6,8 @@ import { ElDialog, ElScrollbar } from 'element-plus';
 import { isNumber } from '#/utils/is';
 import { propTypes } from '#/utils/propTypes';
 
+import { Icon } from '../../Icon';
+
 const props = defineProps({
   fullscreen: propTypes.bool.def(true),
   maxHeight: propTypes.oneOfType([String, Number]).def('400px'),
@@ -77,7 +79,6 @@ const dialogStyle = computed(() => {
     destroy-on-close
     lock-scroll
     draggable
-    top="0"
     :close-on-click-modal="false"
     :show-close="false"
   >
@@ -124,33 +125,17 @@ const dialogStyle = computed(() => {
   </ElDialog>
 </template>
 
-<style lang="less">
-.el-overlay-dialog {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+<style scoped>
+.h-54px {
+  height: 54px;
 }
 
-.el-dialog {
-  margin: 0 !important;
+.relative {
+  position: relative;
+}
 
-  &__header {
-    height: 54px;
-    padding: 0;
-    margin-right: 0 !important;
-    border-bottom: 1px solid var(--el-border-color);
-  }
-
-  &__body {
-    padding: 15px !important;
-  }
-
-  &__footer {
-    border-top: 1px solid var(--el-border-color);
-  }
-
-  &__headerbtn {
-    top: 0;
-  }
+.absolute {
+  position: absolute;
+  right: 0;
 }
 </style>
