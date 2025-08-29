@@ -31,3 +31,9 @@ defineProps({
     </div>
   </ElCard>
 </template>
+<style scoped>
+.content-wrap {
+  padding: 0;
+  margin: 20px;
+}
+</style>
