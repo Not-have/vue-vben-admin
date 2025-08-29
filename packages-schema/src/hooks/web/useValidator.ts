@@ -48,10 +48,25 @@ export const useValidator = () => {
     };
   };
 
+  const email = (message?: string): FormItemRule => {
+    return {
+      validator: (_, val, callback) => {
+        // 匹配大多数合法邮箱的正则
+        const pattern = /^[\w.%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+        if (val && !pattern.test(val)) {
+          callback(new Error(message || '请输入正确的邮箱地址'));
+        } else {
+          callback();
+        }
+      },
+    };
+  };
+
   return {
     lengthRange,
     notSpace,
     notSpecialCharacters,
     required,
+    email,
   };
 };
