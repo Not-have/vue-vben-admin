@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="content-detail-wrap-container relative">
+  <div class="relative p-5">
     <ElCard class="content-detail-wrap-body mb-20px" shadow="never">
       <div
         class="mb-20px pb-20px"
@@ -22,3 +22,16 @@ defineProps({
     </ElCard>
   </div>
 </template>
+<style scoped>
+.mb-20px {
+  margin-bottom: 20px;
+}
+
+.pb-20px {
+  padding-bottom: 20px;
+}
+
+.relative {
+  position: relative;
+}
+</style>
