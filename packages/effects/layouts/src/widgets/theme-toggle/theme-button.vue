@@ -66,7 +66,7 @@ function toggleTheme(event: MouseEvent) {
     ];
     const animate = document.documentElement.animate(
       {
-        clipPath: isDark.value ? [...clipPath].reverse() : clipPath,
+        clipPath: isDark.value ? [...clipPath].toReversed() : clipPath,
       },
       {
         duration: 450,
@@ -88,7 +88,7 @@ function toggleTheme(event: MouseEvent) {
     :aria-label="theme"
     :class="[`is-${theme}`]"
     aria-live="polite"
-    class="theme-toggle cursor-pointer border-none bg-none"
+    class="theme-toggle cursor-pointer border-none bg-none hover:animate-[shrink_0.3s_ease-in-out]"
     v-bind="bindProps"
     @click.stop="toggleTheme"
   >
